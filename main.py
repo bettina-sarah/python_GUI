@@ -46,7 +46,6 @@ class Vue():
                                          i.posX+i.taille, i.posY+i.taille, fill="DeepPink2",
                                          tags=("pion",))
 
-
 class Modele():
     def __init__(self, parent):
         self.parent = parent
@@ -55,10 +54,11 @@ class Modele():
         self.pions = []
 
     def creer_pion_modele(self):
-        x = random.randrange(self.largeur)
-        y = random.randrange(self.hauteur)
-        p = Pion(self, x, y)
-        self.pions.append(p)
+        for i in range(10): #cree 10 a la shot
+            x = random.randrange(self.largeur)
+            y = random.randrange(self.hauteur)
+            p = Pion(self, x, y)
+            self.pions.append(p)
 
     def deplacer_pions(self):
         for i in self.pions:
@@ -69,7 +69,7 @@ class Pion():
     def __init__(self, parent, x, y):
         self.parent = parent
         self.taille = 30
-        self.vitesse = 5 # pas trop d'attribut hardcodé idealement
+        self.vitesse = random.randrange(3,9) # pas trop d'attribut hardcodé idealement
         self.posX = x
         self.posY = y
         self.cibleX = None
