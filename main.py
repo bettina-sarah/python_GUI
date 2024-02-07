@@ -64,7 +64,6 @@ class Modele():
         for i in self.pions:
             i.deplacer()
 
-
 class Pion():
     def __init__(self, parent, x, y):
         self.parent = parent
